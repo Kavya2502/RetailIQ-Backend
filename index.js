@@ -10,15 +10,19 @@ const purchaseInvoiceRoutes = require("./routes/purchaseInvoiceRoutes");
 
 const app = express();
 
-/* ---------- CORS ---------- */
-const corsOptions = {
-  origin: "https://retail-q.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
 
-app.use(cors(corsOptions));
-app.options(/.*/, cors(corsOptions));
+/* ---------- CORS ---------- */
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://retail-q.vercel.app");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
 
 /* ---------- Middleware ---------- */
 app.use(express.json());
