@@ -9,7 +9,7 @@ const invoiceRoutes = require("./routes/invoiceRoutes");
 const purchaseInvoiceRoutes = require("./routes/purchaseInvoiceRoutes");
 
 const app = express();
-const profileRoutes = require("./routes/profileroutes");
+const profileRoutes = require("./routes/profileRoutes");
 
 app.use("/api/profile", profileRoutes);
 
