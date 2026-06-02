@@ -14,7 +14,7 @@ const app = express();
 app.use((req, res, next) => {
   const allowedOrigins = [
     "http://localhost:3000",
-    "https://retail-q.vercel.app",
+    "https://retaill-q.vercel.app",
     "https://retaill-q.vercel.app",
   ];
 
