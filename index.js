@@ -13,10 +13,10 @@ const app = express();
 /* ---------- CORS ---------- */
 app.use((req, res, next) => {
   const allowedOrigins = [
-    "http://localhost:3000",
-    "https://retaill-q.vercel.app",
-    "https://retaill-q.vercel.app",
-  ];
+  "http://localhost:3000",
+  "https://retaill-q.vercel.app",
+  "https://retailiq-backend.onrender.com"
+];
 
   const origin = req.headers.origin;
 
